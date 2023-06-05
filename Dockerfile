@@ -1,4 +1,4 @@
-FROM mongo:4.4.9
+FROM mongo:4.4.22
 
 COPY ./rootfs /
 
