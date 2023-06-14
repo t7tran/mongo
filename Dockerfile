@@ -2,7 +2,7 @@ FROM mongo:4.4.22
 
 COPY ./rootfs /
 
-RUN \
+RUN apt update && apt upgrade -y && \
 # alter default entrypoint
     sed -i '/unset "${!MONGO_INITDB_@}"/d' /usr/local/bin/docker-entrypoint.sh && \
     sed -i '/exec "$@"/d' /usr/local/bin/docker-entrypoint.sh && \
